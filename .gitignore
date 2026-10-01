@@ -1,0 +1,43 @@
+# Python byte-compiled & cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Large model binaries & weights (host on Hugging Face / GitHub Releases)
+*.h5
+*.hdf5
+*.keras
+*.pt
+*.pth
+*.onnx
+*.tflite
+models/*.h5
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Outputs and logs
+*.log
+runs/
+outputs/
+gradcam_outputs/
+
+# OS & IDE
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

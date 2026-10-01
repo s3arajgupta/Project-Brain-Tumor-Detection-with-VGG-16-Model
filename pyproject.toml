@@ -1,0 +1,70 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "neuroscan"
+version = "1.0.0"
+description = "Deep Learning and Explainable AI (Grad-CAM) suite for brain MRI tumor detection with morphological contour cropping."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Swaraj Gupta", email = "s3arajgupta@gmail.com" }
+]
+keywords = [
+    "brain-tumor-detection",
+    "deep-learning",
+    "vgg16",
+    "grad-cam",
+    "explainable-ai",
+    "medical-imaging",
+    "opencv",
+    "computer-vision"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Healthcare Industry",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+    "Topic :: Scientific/Engineering :: Image Recognition"
+]
+dependencies = [
+    "numpy>=1.22.0",
+    "pillow>=9.0.0",
+    "typer>=0.9.0",
+    "rich>=13.0.0",
+]
+
+[project.optional-dependencies]
+cv = [
+    "opencv-python>=4.7.0",
+]
+app = [
+    "streamlit>=1.25.0",
+]
+dev = [
+    "pytest>=7.4.0",
+    "ruff>=0.1.0",
+]
+
+[project.scripts]
+neuroscan = "neuroscan.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+pythonpath = ["src"]
